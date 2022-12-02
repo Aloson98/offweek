@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>offweek</title>
+	<title>habari</title>
 	<meta name="author" content="Your Name">
 	<meta name="description" content="Example description">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,24 +15,18 @@
 <body>
 	<header></header>
 	<main>
-        <h1 class="bg bg-secondary text-colour-danger text-center border m-3 p-3">Welcome to our official webpage for afyatech</h1>
-
-        
-        <div class="container row ">
-            {% for item in article %}
-            <div class="col-6 m-3 p-3">
-                <h2>{{ item.title }}</h2>
-                <p>{{ item.author }}</p>
-                <p>{{ item.content }}</p>
-                <p class="btn btn-primary">
-                    <a href="{% url 'newsview' item.id %}">read more</a> 
-                </p>
+        <h1 class="text-center">{{ anews.title}}</h1>
+        <div class="row">
+            <div class="col border m-3 p-3">
+                <p>{{ anews.author }}</p>
+                <p>{{ anews.content }}</p>
             </div>
-            <div class="col-5 p-3  m-3">
-                <img src="{{ item.content_image.url }}" class="w-100" alt="">
+            <div class="col border m-3 p-3">
+                <img src="{{ anews.content_image.url }}" class="w-75" alt="">
             </div>
-            {% endfor %}
         </div>
+        
+        
     </main>
 	<footer></footer>
 	<script type="text/javascript" src=""></script>
